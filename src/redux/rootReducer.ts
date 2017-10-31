@@ -1,5 +1,6 @@
 import {combineReducers, Reducer} from "redux";
 import {IState, IAction} from "./modules/baseModule";
+import {router5Reducer} from "redux-router5";
 import IStore from "./IStore";
 
 interface IDefault {
@@ -14,7 +15,8 @@ const defaultReducer = (state: IState<IDefault> = initialState, action?: IAction
 };
 
 const rootReducer: Reducer<IStore> = combineReducers<IStore>({
-    default: defaultReducer
+    default: defaultReducer,
+    router: router5Reducer
 });
 
 export default rootReducer;

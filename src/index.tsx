@@ -12,16 +12,19 @@ import { RouterProvider } from 'react-router5';
 const router = configureRouter();
 const store = configureStore(router);
 
-ReactDOM.render(
-    <Provider store={store}>
-        <RouterProvider router={ router }>
-            <AppContainer>
-                <App />
-            </AppContainer>
-        </RouterProvider>
-    </Provider>,
-    document.getElementById("root")
-);
+router.start('home', (err: any, state: any) => {
+    ReactDOM.render(
+        <Provider store={store}>
+            <RouterProvider router={ router }>
+                <AppContainer>
+                    <App />
+                </AppContainer>
+            </RouterProvider>
+        </Provider>,
+        document.getElementById("root")
+    );
+});
+
 
 
 
