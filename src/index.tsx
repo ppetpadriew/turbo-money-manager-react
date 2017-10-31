@@ -1,13 +1,32 @@
+/// <reference path="../config/types/react-router5.d.ts" />
+
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 const { AppContainer } = require("react-hot-loader");
 import {Provider} from "react-redux";
 import App from "./App";
 import {configureStore} from "./redux/configureStore";
+import {configureRouter} from "./routes/configureRouter";
+import { RouterProvider } from 'react-router5';
 
-ReactDOM.render(<AppContainer><App /></AppContainer>, document.getElementById("root"));
+const router = configureRouter();
+const store = configureStore(router);
 
-const store = configureStore();
+router.start('home', (err: any, state: any) => {
+    ReactDOM.render(
+        <Provider store={store}>
+            <RouterProvider router={ router }>
+                <AppContainer>
+                    <App />
+                </AppContainer>
+            </RouterProvider>
+        </Provider>,
+        document.getElementById("root")
+    );
+});
+
+
+
 
 // Handle hot reloading requests from Webpack
 if (module.hot) {
@@ -19,9 +38,11 @@ if (module.hot) {
         // And render it into the root element again
         ReactDOM.render(
             <Provider store={store}>
-                <AppContainer>
-                    <NextApp />
-                </AppContainer>
+                <RouterProvider router={ router }>
+                    <AppContainer>
+                        <NextApp />
+                    </AppContainer>
+                </RouterProvider>
             </Provider>
                 ,
             document.getElementById("root")
