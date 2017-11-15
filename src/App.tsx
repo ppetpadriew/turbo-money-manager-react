@@ -2,7 +2,9 @@ import * as React from "react";
 import {connect, Dispatch} from "react-redux";
 import {Link} from "react-router5";
 import Test from "./components/Test";
-import Home from "./components/Home";
+import Home from "./components/containers/Home";
+import SideMenu from "./components/SideMenu";
+import HamburgerButton from "./components/HamburgerButton";
 
 interface IAppProps {
     prop1: number,
@@ -25,6 +27,8 @@ class App extends React.Component<IAppProps, IAppStates>{
 
         return (
             <div>
+                <HamburgerButton />
+                <SideMenu />
                 <h1>Hello World</h1>
                 <Link routeName="test" routeOptions={{reload:true}}>Test</Link>
                 {React.createElement(views[segment])}
