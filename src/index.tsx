@@ -8,10 +8,10 @@ import App from "./App";
 import {configureStore} from "./redux/configureStore";
 import {configureRouter} from "./routes/configureRouter";
 import { RouterProvider } from 'react-router5';
+import "./assets/scss/main.scss";
 
 const router = configureRouter();
 const store = configureStore(router);
-
 router.start('home', (err: any, state: any) => {
     ReactDOM.render(
         <Provider store={store}>
