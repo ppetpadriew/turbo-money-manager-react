@@ -33,7 +33,7 @@ var config = {
                 loader: ExtractTextPlugin.extract({
                     fallback:'style-loader',
                     use: ['css-loader', 'sass-loader'],
-                    publicPath: '/assets/'
+                    publicPath: '/public/'
                 })
             },
             {
@@ -41,7 +41,7 @@ var config = {
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: 'css-loader',
-                    publicPath: '/assets/'
+                    publicPath: '/public/'
                 })
             },
             {
