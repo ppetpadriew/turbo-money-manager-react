@@ -4,7 +4,7 @@ import {Link} from "react-router5";
 import Test from "./components/Test";
 import Home from "./components/containers/Home";
 import SideMenu from "./components/SideMenu";
-import HamburgerButton from "./components/HamburgerButton";
+import TopNav from "./components/TopNav";
 
 interface IAppProps {
     prop1: number,
@@ -27,7 +27,7 @@ class App extends React.Component<IAppProps, IAppStates>{
 
         return (
             <div>
-                <HamburgerButton />
+                <TopNav />
                 <SideMenu />
                 <h1>Hello World</h1>
                 <Link routeName="test" routeOptions={{reload:true}}>Test</Link>

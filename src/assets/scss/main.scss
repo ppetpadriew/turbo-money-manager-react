@@ -65,6 +65,34 @@ body{
   }
 }
 
-.hamburger-button {
-  background: green;
+.top-nav{
+  background: #4285f4;
+  box-sizing: border-box;
+  height: 56px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+
+  &__hamburger-button {
+    height: 100%;
+  }
+
+  &__hamburger-icon {
+    color: #fff;
+    font-size: 180%;
+    height: 24px;
+    width: 24px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &__hamburger-icon:active {
+    background-color: rgba(0,0,0,.12);
+  }
 }
+

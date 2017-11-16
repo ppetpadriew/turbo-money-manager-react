@@ -22,8 +22,8 @@ class HamburgerButton extends React.Component<IHamburgerButtonProps, IHamburgerB
 
     render(): JSX.Element {
         return(
-            <span className="hamburger-button" onClick={this.handleClick}>
-                <img src={icon} alt=""/>
+            <span className="top-nav__hamburger-button" onClick={this.handleClick}>
+                <span className="top-nav__hamburger-icon ion-navicon"></span>
             </span>
         );
     }
