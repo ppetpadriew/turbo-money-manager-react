@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server --content-base dist/",
+    "lint": "sass-lint -c sass-lint.yml -v -q",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Peeratchai Petpadriew <p.petpadriew@gmail.com>",
@@ -24,6 +25,7 @@
     "file-loader": "^0.11.2",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.9",
+    "sass-lint": "^1.12.1",
     "sass-loader": "^6.0.6",
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.18.2",
