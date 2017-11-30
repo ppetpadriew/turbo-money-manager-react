@@ -1,5 +1,5 @@
 var webpack = require("webpack");
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var port = 8080;
 var config = {
     resolve: {
@@ -31,17 +31,17 @@ var config = {
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({
-                    fallback:'style-loader',
-                    use: ['css-loader', 'sass-loader'],
-                    publicPath: '/public/'
+                    fallback: "style-loader",
+                    use: ["css-loader", "postcss-loader", "sass-loader"],
+                    publicPath: "/public/"
                 })
             },
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader',
-                    publicPath: '/public/'
+                    fallback: "style-loader",
+                    use: ["css-loader", "postcss-loader"],
+                    publicPath: "/public/"
                 })
             },
             {
@@ -54,19 +54,19 @@ var config = {
             },
             {
                 test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+                loader: "url-loader?limit=10000&mimetype=application/font-woff"
             },
             {
                 test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
+                loader: "url-loader?limit=10000&mimetype=application/octet-stream"
             },
             {
                 test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file-loader'
+                loader: "file-loader"
             },
             {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+                loader: "url-loader?limit=10000&mimetype=image/svg+xml"
             }
         ]
     },
@@ -89,7 +89,7 @@ var config = {
         new webpack.NoEmitOnErrorsPlugin(),
 
         new ExtractTextPlugin({
-            filename: 'style.css',
+            filename: "style.css",
             allChunks: true
         })
     ],
