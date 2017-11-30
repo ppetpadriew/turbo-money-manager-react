@@ -32,7 +32,7 @@ var config = {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({
                     fallback:'style-loader',
-                    use: ['css-loader', 'sass-loader'],
+                    use: ['css-loader', "postcss-loader", 'sass-loader'],
                     publicPath: '/public/'
                 })
             },
@@ -40,7 +40,7 @@ var config = {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: 'css-loader',
+                    use: ['css-loader', "postcss-loader"],
                     publicPath: '/public/'
                 })
             },
