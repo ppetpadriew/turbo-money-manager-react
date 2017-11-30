@@ -1,70 +1,7 @@
-$side-menu--width: 232px;
-$side-menu__item--color: #616161;
-$side-menu__link--color: $side-menu__item--color;
-body{
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-}
-.side-menu {
-  padding: 0 0 8px 0;
-  bottom: 0;
-  left: -$side-menu--width;
-  overflow: visible;
-  position: fixed;
-  width: $side-menu--width;
-  top: 56px;
-  z-index: 1;
-  transition: transform .15s ease-in-out;
-  background: #f2f2f2;
+@import "side-menu";
+@import "hamburger-button";
 
-  &__item {
-    padding-left: 26px;
-    padding-right: 12px;
-    cursor: pointer;
-    line-height: 40px;
-    color: $side-menu__item--color;
-
-    &--active {
-      background-color: rgba(0,0,0,.05);
-      border-radius: 2px;
-      color: #212121;
-      font-weight: bold;
-    }
-  }
-
-  &__item:hover {
-    background-color: rgba(0,0,0,.03);
-    border-radius: 2px;
-  }
-
-  &__link {
-    width: 100%;
-    text-decoration: none;
-    color: $side-menu__link--color;
-
-    &--active {
-      color: #212121;
-      font-weight: bold;
-    }
-  }
-
-  &__link-text {
-    display: inline-block;
-    width: 75%;
-    font-size: 90%;
-  }
-
-  &__icon {
-    display: inline-block;
-    width: 25%;
-    font-size: 170%;
-  }
-
-  &--slide-in {
-    transform: translateX($side-menu--width);
-    display: block;
-  }
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.hamburger-button {
-  background: green;
-}
